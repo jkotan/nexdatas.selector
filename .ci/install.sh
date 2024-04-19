@@ -73,7 +73,7 @@ if [ "$2" = "2" ]; then
     docker exec  --user root ndts /bin/sh -c 'export DEBIAN_FRONTEND=noninteractive; apt-get -qq update; apt-get -qq install -y   python-pytango python-h5py  python-qtpy python-click git python-itango python-pint nxsconfigserver-db ; sleep 10'
 else
     echo "install nxsconfigserver-db"
-    docker exec --user root ndts /bin/bash -c 'apt-get -qq update; apt-get  install -y   nxsconfigserver-db; sleep 10'
+    docker exec --user root ndts /bin/bash -c 'export DEBIAN_FRONTEND=noninteractive; apt-get -qq update; apt-get  install -y   nxsconfigserver-db; sleep 10'
     if [ "$1" = "ubuntu24.04" ]; then
 	docker exec  --user root ndts /usr/bin/mysql -e 'GRANT ALL PRIVILEGES ON nxsconfig.* TO "tango"@"%" identified by "rootpw"'
 	docker exec  --user root ndts /usr/bin/mysql -e 'GRANT ALL PRIVILEGES ON nxsconfig.* TO "tango"@"localhost" identified by "rootpw"'
