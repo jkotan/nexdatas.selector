@@ -39,6 +39,7 @@ RUN /bin/bash -c 'export DEBIAN_FRONTEND=noninteractive; debconf-set-selections 
 ENV PKG_CONFIG_PATH=/home/tango/lib/pkgconfig
 
 ENV MYSQL_HOST=localhost
+ENV DISPLAY=":99.0"
 USER tango
 WORKDIR /home/tango
 
