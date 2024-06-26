@@ -814,7 +814,8 @@ class ServerState(Qt.QObject):
             try:
                 self.__command(self.__dp, "resetPreselectedComponents")
             except tango.CommunicationFailed as e:
-                if e[-1].reason == "API_DeviceTimedOut":
+
+                if e.args and e.args[-1].reason == "API_DeviceTimedOut":
                     self.__wait(self.__dp)
                 else:
                     raise
@@ -831,7 +832,7 @@ class ServerState(Qt.QObject):
             try:
                 self.__command(self.__dp, "PreselectComponents")
             except tango.CommunicationFailed as e:
-                if e[-1].reason == "API_DeviceTimedOut":
+                if e.args and e.args[-1].reason == "API_DeviceTimedOut":
                     self.__wait(self.__dp)
                 else:
                     raise
@@ -1090,7 +1091,7 @@ class ServerState(Qt.QObject):
             try:
                 self.__dp.write_attribute(name, value)
             except tango.CommunicationFailed as e:
-                if e[-1].reason == "API_DeviceTimedOut":
+                if e.args and e.args[-1].reason == "API_DeviceTimedOut":
                     self.__wait(self.__dp)
                 else:
                     raise
