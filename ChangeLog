@@ -1,3 +1,7 @@
+2024-07-02 Jan Kotanski <jankotan@gmail.com>
+	* fix dictionary changed size during iteration error (#98)
+	* tagged as 3.20.2
+
 2024-06-26 Jan Kotanski <jankotan@gmail.com>
 	* fix error handling after change of API
 	* tagged as 3.20.1

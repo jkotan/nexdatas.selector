@@ -430,7 +430,7 @@ class Storage(Qt.QObject):
         :type dvalue: :obj:`bool`
         """
         ddsdict = self.state.ddsdict.keys()
-        for k, st in group.items():
+        for k in list(group.keys()):
             if k not in dct.keys() \
                and k not in self.state.orderedchannels \
                and k not in ddsdict:
