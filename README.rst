@@ -56,12 +56,12 @@ Extract the sources and run
 
 .. code-block:: console
 
-	  $ python setup.py install
+	  $ python3 setup.py install
 
 Debian packages
 ^^^^^^^^^^^^^^^
 
-Debian `bookworm`, `bullseye`, `buster` or Ubuntu  `lunar`, `jammy`, `focal` packages can be found in the HDRI repository.
+Debian `bookworm`, `bullseye`, `buster` or Ubuntu  `oracular`, `noble`, `jammy` packages can be found in the HDRI repository.
 
 To install the debian packages, add the PGP repository key
 
