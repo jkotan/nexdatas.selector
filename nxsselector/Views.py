@@ -693,7 +693,7 @@ class CheckPropView(CheckDisView):
                     prs["link"] = dform.link
                     prs["canfail"] = dform.canfail
                     prs["shape"] = dform.shape
-                    prs["nexus_path"] = dform.shape or None
+                    prs["nexus_path"] = dform.path or None
                 for nm, val in dform.variables.items():
                     prs[nm] = val
                 self.model.setData(ind5, (
